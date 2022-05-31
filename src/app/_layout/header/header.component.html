@@ -1,27 +1,37 @@
 <nav class="navbar">
 
-  <div class="navbar-burger" data-target="navMenu" (click)="mobileMenuExpanded = !mobileMenuExpanded">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <div id="navMenu" class="navbar-menu" [ngClass]="{'is-active': mobileMenuExpanded}">
-    <div class="navbar-start">
-      <span class="navbar-item">
-        {{ 'system.hello' | translate }}
-      </span>
+  <div class="container">
+    <div class="navbar-burger" data-target="navMenu" (click)="mobileMenuExpanded = !mobileMenuExpanded">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
-    <div class="navbar-end">
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          {{language.title | translate}}
+    <div id="navMenu" class="navbar-menu" [ngClass]="{'is-active': mobileMenuExpanded}">
+      <div class="navbar-start">
+        <span class="navbar-item">
+          {{ 'system.hello' | translate }}
+        </span>
+        <a class="navbar-item is-flex" *ngFor="let menuItem of menuItems" [routerLink]="[menuItem.url]"
+          [routerLinkActive]="'is-active'">
+          <span class="icon mr-1">
+            <mat-icon>article</mat-icon>
+          </span>
+          <span>{{ menuItem.title | translate }}</span>
         </a>
-        <div class="navbar-dropdown is-right">
-          <a class="navbar-item" *ngFor="let lang of languages" (click)="setLanguage(lang)">
-            {{lang.title | translate}}
+      </div>
+
+
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            {{language.title | translate}}
           </a>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" *ngFor="let lang of languages" (click)="setLanguage(lang)">
+              {{lang.title | translate}}
+            </a>
+          </div>
         </div>
       </div>
     </div>

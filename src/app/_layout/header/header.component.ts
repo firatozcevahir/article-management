@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, LOCALE_ID, OnInit } from '@angular/core';
-import { LANGUAGES } from '@app/_core/constants/base-constants';
+import { HEADER_MENU_ITEMS, LANGUAGES } from '@app/_core/constants/base-constants';
 import { IdTitlePair } from '@app/_core/constants/models/base-models';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -13,6 +13,7 @@ export class HeaderComponent {
 
   mobileMenuExpanded = false;
 
+  menuItems = HEADER_MENU_ITEMS;
   languages = LANGUAGES;
   language: IdTitlePair;
 

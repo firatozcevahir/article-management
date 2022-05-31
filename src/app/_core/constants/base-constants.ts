@@ -1,7 +1,7 @@
 import { registerLocaleData } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-import { IdTitlePair } from "./models/base-models";
+import { HeaderMenuItem, IdTitlePair } from "./models/base-models";
 import { LANGUAGE_FILE_PATH } from "./path-constants";
 
 
@@ -25,3 +25,13 @@ export const LANGUAGES: IdTitlePair[] = [
     title: 'system.language.english'
   },
 ];
+
+
+export const HEADER_MENU_ITEMS: HeaderMenuItem[] = [
+  {
+    id: 'article-menu',
+    title: 'system.menu.articles',
+    icon: 'article',
+    url: '/articles'
+  }
+]
