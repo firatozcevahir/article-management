@@ -1,8 +1,13 @@
-<div class="column is-align-items-center is-flex">
-  <button mat-icon-button class="has-text-primary" (click)="loadData()">
-    <mat-icon>refresh</mat-icon>
-  </button>
-  <span class="title is-6 has-text-grey">{{'article.title' | translate }}</span>
+<div class="column is-align-items-center is-flex is-justify-content-space-between">
+  <div>
+    <button mat-icon-button class="has-text-primary" (click)="loadData()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+    <span class="title is-6 has-text-grey">{{'article.title' | translate }}</span>
+  </div>
+  <a mat-icon-button class="button is-primary" [routerLink]="'/article/new'">
+    <mat-icon>add</mat-icon>
+  </a>
 </div>
 <div class="column is-justify-content-center">
   <div class="table-container">
@@ -28,7 +33,7 @@
           <td>{{article.publishDate | localizedDate}}</td>
           <td>{{article.createdOn | localizedDate}}</td>
           <td class="has-text-centered">
-            <a mat-icon-button type="button" class="has-text-info" [routerLink]="'/article/edit/' + article.id">
+            <a mat-icon-button class="has-text-info" [routerLink]="'/article/edit/' + article.id">
               <mat-icon class="material-icons-outlined">edit</mat-icon>
             </a>
             <button mat-icon-button type="button" class="has-text-danger" (click)="deleteArticle(article)">
