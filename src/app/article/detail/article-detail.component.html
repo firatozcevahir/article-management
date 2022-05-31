@@ -1,44 +1,39 @@
-<div class="container mt-5">
-  <div class="card mb-6">
-    <div class="columns is-multiline" *ngIf="article">
-      <div class="column p-5">
-        <div class="has-text-centered is-size-1 is-size-3-mobile">{{article.title}}</div>
-        <div class="has-text-right has-text-primary-dark is-italic">- {{article.author}}</div>
-        <div class="has-text-right has-text-grey-light is-size-7">{{article.publishDate | localizedDate}}</div>
-      </div>
-      <div class="column is-full pb-0">
-        <mat-divider></mat-divider>
-      </div>
-      <div class="column is-full p-6 has-text-justified">
-        {{article.content}}
-      </div>
+<div *ngIf="article">
+  <div class="column p-5">
+    <div class="has-text-centered is-size-1 is-size-3-mobile">{{article.title}}</div>
+    <div class="has-text-right has-text-primary-dark is-italic">- {{article.author}}</div>
+    <div class="has-text-right has-text-grey-light is-size-7">{{article.publishDate | localizedDate}}</div>
+  </div>
+  <div class="column is-full pb-0">
+    <mat-divider></mat-divider>
+  </div>
+  <div class="column is-full p-6 has-text-justified">
+    {{article.content}}
+  </div>
+  <div class="column is-full">
+    <mat-divider></mat-divider>
+  </div>
+  <div class="column is-full p-6">
+    <div class="columns is-multiline">
       <div class="column is-full">
-        <mat-divider></mat-divider>
+        <div class="title">{{'article.checkOutOtherArticles' | translate}}</div>
       </div>
-      <div class="column is-full p-6">
-        <div class="columns is-multiline">
-          <div class="column is-full">
-            <div class="title">{{'article.checkOutOtherArticles' | translate}}</div>
-          </div>
-          <div class="column is-half" *ngFor="let article of randomArticles">
-            <div class="card p-4 is-shadowless">
-              <div class="card-content">
-                <div class="title is-size-5 has-text-grey">
+      <div class="column is-half" *ngFor="let article of randomArticles">
+        <div class="card p-4 is-shadowless">
+          <div class="card-content">
+            <div class="title is-size-5 has-text-grey">
 
-                  {{article.title}}
-                </div>
-                <div class="content has-text-grey">
-                  {{article.content | truncate:135}}
-                </div>
-              </div>
-              <footer class="card-footer">
-                <a class="card-footer-item has-text-primary is-justify-content-end" target="_blank"
-                  [routerLink]="['/article/view/' + article.id]">{{'article.readMore' | translate}}</a>
-              </footer>
+              {{article.title}}
+            </div>
+            <div class="content has-text-grey">
+              {{article.content | truncate:135}}
             </div>
           </div>
+          <footer class="card-footer">
+            <a class="card-footer-item has-text-primary is-justify-content-end" target="_blank"
+              [routerLink]="['/article/view/' + article.id]">{{'article.readMore' | translate}}</a>
+          </footer>
         </div>
       </div>
     </div>
-
   </div>

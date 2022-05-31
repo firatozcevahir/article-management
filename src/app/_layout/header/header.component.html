@@ -12,8 +12,8 @@
         <span class="navbar-item">
           {{ 'system.hello' | translate }}
         </span>
-        <a class="navbar-item" *ngFor="let menuItem of menuItems" [routerLink]="[menuItem.url]"
-          [routerLinkActive]="'has-text-primary'">
+        <a class="navbar-item is-flex" *ngFor="let menuItem of menuItems" [routerLink]="[menuItem.url]"
+          [routerLinkActive]="'has-text-primary-dark'">
           <span class="icon mr-1">
             <mat-icon class="material-icons-outlined">article</mat-icon>
           </span>
