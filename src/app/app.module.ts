@@ -12,6 +12,7 @@ import { DatePipe } from '@angular/common';
 
 import localeTr from '@angular/common/locales/tr';
 import localeEn from '@angular/common/locales/en';
+import { SharedModule } from './_shared/shared.module';
 
 REGISTER_LOCALE_DATA(localeTr, localeEn);
 @NgModule({
@@ -31,6 +32,7 @@ REGISTER_LOCALE_DATA(localeTr, localeEn);
         deps: [HttpClient]
       }
     }),
+    SharedModule
   ],
   providers: [
     DatePipe

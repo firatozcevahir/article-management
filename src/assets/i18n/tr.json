@@ -1,11 +1,35 @@
 {
   "system": {
+    "loading": "Yükleniyor",
     "hello": "Merhaba",
     "login": "Giriş Yap",
+    "yes": "Evet",
+    "no": "Hayır",
+    "confirm": "Onayla",
     "language": {
       "title": "Dil",
       "english": "İngilizce",
       "turkish": "Türkçe"
+    },
+    "action": {
+      "confirmDelete": "Silmeyi Onayla",
+      "areYouSure": "Öğeyi silmek istediğinize emin misiniz?"
+    }
+  },
+  "article": {
+    "title": "Makaleler",
+    "notFound": "Makale Bulunamadı",
+    "addNewArticle": "Yeni Makale Ekle",
+    "readMore": "Devamını Oku",
+    "checkOutOtherArticles": "Diğer makalelere göz atın",
+    "table": {
+      "title": "Başlık",
+      "author": "Yayıncı",
+      "excerpt": "Alıntı",
+      "publishDate": "Yayınlama Tarihi",
+      "createdOn": "Oluşturma Tarihi",
+      "actions": "İşlemler",
+      "totalCount": "Toplam Makale"
     }
   }
 }

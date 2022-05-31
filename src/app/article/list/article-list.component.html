@@ -1,1 +1,63 @@
-<p>article-list works!</p>
+<div class="container mt-5">
+
+  <div class="card p-5">
+
+    <div class="columns is-multiline">
+      <div class="column is-align-items-center is-flex">
+        <button mat-icon-button class="has-text-primary" (click)="loadData()">
+          <mat-icon>refresh</mat-icon>
+        </button>
+        <span class="title is-6 has-text-grey">{{'article.title' | translate }}</span>
+      </div>
+    </div>
+    <div class="column is-justify-content-center">
+      <div class="table-container">
+        <table class="table is-fullwidth is-hoverable is-striped">
+          <thead>
+            <tr>
+              <th class="has-text-centered">#</th>
+              <th>{{ 'article.table.title' | translate }}</th>
+              <th>{{ 'article.table.author' | translate }}</th>
+              <th>{{ 'article.table.excerpt' | translate }}</th>
+              <th>{{ 'article.table.publishDate' | translate }}</th>
+              <th>{{ 'article.table.createdOn' | translate }}</th>
+              <th class="has-text-centered">{{ 'article.table.actions' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let article of articles;let i = index">
+              <td class="has-text-centered">{{i+1}}</td>
+              <td><a [routerLink]="['/article/view/' + article.id]"
+                  class="has-text-primary is-italic" [matTooltip]="article.title.length >= 30 ? article.title : null">{{article.title| truncate:30}}</a></td>
+              <td>{{article.author }}</td>
+              <td>{{article.content | truncate}}</td>
+              <td>{{article.publishDate | localizedDate}}</td>
+              <td>{{article.createdOn | localizedDate}}</td>
+              <td class="has-text-centered">
+                <a mat-icon-button type="button" class="has-text-info" [routerLink]="['/article/edit/' + article.id]">
+                  <mat-icon class="material-icons-outlined">edit</mat-icon>
+                </a>
+                <button mat-icon-button type="button" class="has-text-danger" (click)="deleteArticle(article)">
+                  <mat-icon class="material-icons-outlined">delete</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot *ngIf="articles.length">
+            <tr>
+              <td colspan="7" class="has-text-right"><strong>{{'article.table.totalCount' | translate }}:</strong>
+                {{articles.length}}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <div *ngIf="!isLoading && !articles.length" class="has-text-centered">
+        <div class="is-flex is-justify-content-center">{{'article.notFound'| translate}}
+          <mat-icon class="ml-2">sentiment_dissatisfied</mat-icon>
+        </div>
+        <a class="has-text-primary is-flex is-justify-content-center" [routerLink]="['/article/new']">
+          {{'article.addNewArticle' | translate}} <mat-icon>add</mat-icon></a>
+      </div>
+    </div>
+  </div>
+</div>

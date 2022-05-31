@@ -1,0 +1,14 @@
+<div class="is-flex has-text-danger align-items-center mb-5">
+  <mat-icon class="mr-2 material-icons-outlined">warning</mat-icon>
+  {{title | translate}}
+</div>
+
+<div class="is-flex mb-5">
+<p>{{message | translate}}</p>
+
+</div>
+
+<div class="is-flex is-justify-content-end">
+  <button mat-button class="mr-1" (click)="onDismiss()">{{'system.no'| translate}}</button>
+  <button mat-flat-button class="button is-danger" (click)="onConfirm()">{{'system.yes'| translate}}</button>
+</div>
