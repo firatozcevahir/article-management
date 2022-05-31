@@ -1,0 +1,11 @@
+{
+  "system": {
+    "hello": "Merhaba",
+    "login": "Giriş Yap",
+    "language": {
+      "title": "Dil",
+      "english": "İngilizce",
+      "turkish": "Türkçe"
+    }
+  }
+}

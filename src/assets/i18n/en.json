@@ -1,0 +1,11 @@
+{
+  "system": {
+    "hello": "Hello",
+    "login": "Log In",
+    "language": {
+      "title": "Language",
+      "english": "English",
+      "turkish": "Turkish"
+    }
+  }
+}
