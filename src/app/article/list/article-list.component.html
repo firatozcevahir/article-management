@@ -1,4 +1,4 @@
-<div class="column is-align-items-center is-flex is-justify-content-space-between">
+<div class="column is-flex is-justify-content-space-between">
   <div>
     <button mat-icon-button class="has-text-primary" (click)="loadData()">
       <mat-icon>refresh</mat-icon>
@@ -15,12 +15,12 @@
       <thead>
         <tr>
           <th class="has-text-centered">#</th>
-          <th>{{ 'article.table.title' | translate }}</th>
-          <th>{{ 'article.table.author' | translate }}</th>
-          <th>{{ 'article.table.excerpt' | translate }}</th>
-          <th>{{ 'article.table.publishDate' | translate }}</th>
-          <th>{{ 'article.table.createdOn' | translate }}</th>
-          <th class="has-text-centered">{{ 'article.table.actions' | translate }}</th>
+          <th>{{ 'article.field.title' | translate }}</th>
+          <th>{{ 'article.field.author' | translate }}</th>
+          <th>{{ 'article.field.excerpt' | translate }}</th>
+          <th>{{ 'article.field.publishDate' | translate }}</th>
+          <th>{{ 'article.field.createdOn' | translate }}</th>
+          <th class="has-text-centered">{{ 'article.field.actions' | translate }}</th>
         </tr>
       </thead>
       <tbody>
@@ -44,7 +44,7 @@
       </tbody>
       <tfoot *ngIf="articles.length">
         <tr>
-          <td colspan="7" class="has-text-right"><strong>{{'article.table.totalCount' | translate }}:</strong>
+          <td colspan="7" class="has-text-right"><strong>{{'article.field.totalCount' | translate }}:</strong>
             {{articles.length}}</td>
         </tr>
       </tfoot>

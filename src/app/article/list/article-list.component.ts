@@ -40,7 +40,7 @@ export class ArticleListComponent {
 
 
   deleteArticle(article: ArticleDto): void {
-    this.dialogService.openConfirmation('system.action.confirmDelete', 'system.action.areYouSure')
+    this.dialogService.openConfirmation('system.text.confirmDelete', 'system.text.areYouSure')
       .afterClosed()
       .subscribe((res) => {
 
@@ -56,7 +56,7 @@ export class ArticleListComponent {
             this.spinner.hide();
           }))
           .subscribe((data) => {
-
+            this.loadData();
           });
       });
   }

@@ -1,1 +1,99 @@
-<p>article-edit works!</p>
+<div class="p-6">
+  <div class="column is-flex is-justify-content-space-between mb-4 p-0">
+    <span class="title is-6 has-text-grey">{{'article.new' | translate }} </span>
+    <button type="button" class="button is-primary" (click)="showPreview()" [disabled]="form.invalid"
+      [matTooltip]="'article.preview' | translate">
+      <mat-icon class="material-icons-outlined">visibility</mat-icon>
+    </button>
+  </div>
+  <form [formGroup]="form">
+    <div class="field is-horizontal">
+      <div class="field-label is-large">
+        <label class="label">
+          {{'article.field.title' | translate}}
+          <span class="has-text-danger">*</span>
+        </label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <input class="input is-large" type="text" [placeholder]="'article.field.title' | translate"
+              formControlName="title" [ngClass]="{'is-danger': isControlInvalid('title')}">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <label class="label">
+          {{'article.field.author' | translate}}
+          <span class="has-text-danger">*</span>
+        </label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <input class="input" type="text" [placeholder]="'article.field.author' | translate" formControlName="author"
+              [ngClass]="{'is-danger': isControlInvalid('author')}">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <label class="label">
+          {{'article.field.publishDate' | translate}}
+          <span class="has-text-danger">*</span>
+        </label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <input class="input" max="9999-12-31T23:59" type="datetime-local" formControlName="publishDate"
+              [ngClass]="{'is-danger': isControlInvalid('publishDate')}">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <label class="label">
+          {{'article.field.content' | translate}}
+          <span class="has-text-danger">*</span>
+        </label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea" [placeholder]="'article.field.content' | translate" formControlName="content"
+              [ngClass]="{'is-danger': isControlInvalid('content')}"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-grouped is-grouped-right">
+      <p class="control">
+        <a class="button is-light" [routerLink]="'/articles'">
+          {{'system.action.cancel' | translate}}
+        </a>
+      </p>
+      <p class="control">
+        <button type="button" class="button is-info" [disabled]="form.invalid"
+          (click)="saveArticle(false)">
+          {{'system.action.save' | translate}}
+        </button>
+      </p>
+      <p class="control">
+        <button type="button" class="button is-primary" [disabled]="form.invalid"
+          (click)="saveArticle()">
+          {{'system.action.saveAndClose' | translate}}
+        </button>
+      </p>
+    </div>
+
+  </form>
+</div>

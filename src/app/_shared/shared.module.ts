@@ -13,7 +13,6 @@ import { ConfirmationDialogModule } from './components/dialogs/confirmation-dial
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDividerModule } from '@angular/material/divider';
-
 @NgModule({
   declarations: [
     LocalizedDatePipe,

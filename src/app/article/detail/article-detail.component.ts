@@ -42,7 +42,6 @@ export class ArticleDetailComponent implements OnInit {
       .subscribe(([article, randomArticles]) => {
         this.article = article;
         this.randomArticles = randomArticles;
-        console.log(this.article);
       });
   }
 

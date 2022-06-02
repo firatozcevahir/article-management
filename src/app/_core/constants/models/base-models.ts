@@ -1,7 +1,7 @@
 export class EntityBase {
-  id: string;
-  isActive: boolean;
-  createdOn: Date;
+  id?: string;
+  isActive?: boolean;
+  createdOn?: Date;
 }
 export class IdTitlePair {
   id: string;

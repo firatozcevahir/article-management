@@ -2,34 +2,42 @@
   "system": {
     "loading": "Loading",
     "hello": "Hello",
-    "login": "Login",
-    "yes": "Yes",
-    "no": "No",
-    "confirm": "Confirm",
     "language": {
       "title": "Language",
       "english": "English",
       "turkish": "Turkish"
     },
-    "action": {
-      "confirmDelete": "Confirm Deletion",
+    "text": {
+      "confirmDelete": "Confirm Delete",
       "areYouSure": "Are you sure to delete the item?"
+    },
+    "action": {
+      "login": "Login",
+      "yes": "Yes",
+      "no": "No",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saveAndClose": "Save and Close"
     }
   },
   "article": {
     "title": "Articles",
+    "new": "New Article",
     "notFound": "Not Articles Found",
     "addNewArticle": "Add a New Article",
     "readMore": "Read More",
     "checkOutOtherArticles": "Check Out Other Articles",
-    "table": {
+    "preview": "Preview",
+    "field": {
       "title": "Title",
       "author": "Author",
       "excerpt": "Excerpt",
       "publishDate": "Publish Date",
       "createdOn": "Created On",
       "actions": "Actions",
-      "totalCount": "Total Articles"
+      "totalCount": "Total Articles",
+      "content": "Content"
     }
   }
 }
