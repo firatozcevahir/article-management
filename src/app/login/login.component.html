@@ -1,0 +1,38 @@
+<section class="hero is-light is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+          <form [formGroup]="form" class="box">
+            <div class="field">
+              <label class="label">{{'login.field.username' | translate}}</label>
+              <div class="control has-icons-left">
+                <input type="text" [placeholder]="'login.field.usernamePlaceholder' | translate" class="input"
+                  formControlName="userName">
+                <span class="icon is-small is-left">
+                  <mat-icon>person</mat-icon>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">{{'login.field.password' | translate}}</label>
+              <div class="control has-icons-left">
+                <input type="password" [placeholder]="'login.field.passwordPlaceholder' | translate" class="input"
+                  formControlName="password">
+                <span class="icon is-small is-left">
+                  <mat-icon>lock</mat-icon>
+                </span>
+              </div>
+            </div>
+            <div class="field has-text-right">
+              <button class="button is-primary" [ngClass]="{'is-loading': isLoading}" [disabled]="form.invalid"
+                (click)="login()">
+                {{'system.action.login' | translate}}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

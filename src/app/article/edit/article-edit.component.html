@@ -44,6 +44,23 @@
     <div class="field is-horizontal">
       <div class="field-label">
         <label class="label">
+          {{'article.field.summary' | translate}}
+          <span class="has-text-danger">*</span>
+        </label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <input class="input" type="text" [placeholder]="'article.field.summary' | translate" formControlName="summary"
+              [ngClass]="{'is-danger': isControlInvalid('summary')}">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <label class="label">
           {{'article.field.publishDate' | translate}}
           <span class="has-text-danger">*</span>
         </label>
@@ -68,8 +85,9 @@
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <textarea class="textarea" [placeholder]="'article.field.content' | translate" formControlName="content"
-              [ngClass]="{'is-danger': isControlInvalid('content')}"></textarea>
+            <angular-editor [placeholder]="'article.field.content' | translate" formControlName="content" [config]="editorConfig"></angular-editor>
+            <!-- <textarea class="textarea" [placeholder]="'article.field.content' | translate" formControlName="content"
+              [ngClass]="{'is-danger': isControlInvalid('content')}"></textarea> -->
           </div>
         </div>
       </div>

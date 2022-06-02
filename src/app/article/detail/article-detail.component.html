@@ -7,7 +7,7 @@
   <div class="column is-full pb-0">
     <mat-divider></mat-divider>
   </div>
-  <div class="column is-full p-6 has-text-justified">
+  <div class="column is-full p-6 has-text-justified" [innerHtml]="article.content | sanitizeHtml">
     {{article.content}}
   </div>
   <div class="column is-full">
@@ -26,7 +26,7 @@
               {{article.title}}
             </div>
             <div class="content has-text-grey">
-              {{article.content | truncate:135}}
+              {{article.summary | truncate:135}}
             </div>
           </div>
           <footer class="card-footer">

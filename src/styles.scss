@@ -5,5 +5,26 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp";
 
 @import "~bulma/css/bulma.min.css";
+@import "~bulma/bulma.sass";
 
 @import "~ngx-spinner/animations/ball-newton-cradle.css";
+
+
+.custom-snackbar {
+  &.error {
+    background: $danger;
+    color: $white;
+  }
+  &.success {
+    background: $success;
+    color: $white;
+  }
+  &.warning {
+    background: $warning;
+    color: $dark;
+  }
+  &.info {
+    background: $info;
+    color: $white;
+  }
+}

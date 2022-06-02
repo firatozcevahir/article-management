@@ -9,13 +9,13 @@
 
     <div id="navMenu" class="navbar-menu" [ngClass]="{'is-active': mobileMenuExpanded}">
       <div class="navbar-start">
-        <span class="navbar-item">
-          {{ 'system.hello' | translate }}
-        </span>
+        <!-- <span class="navbar-item">
+          {{ 'system.hello' | translate }} {{isLoggedIn ? userInfo : ''}}
+        </span> -->
         <a class="navbar-item is-flex" *ngFor="let menuItem of menuItems" [routerLink]="menuItem.url"
           [routerLinkActive]="'has-text-primary-dark'">
           <span class="icon mr-1">
-            <mat-icon class="material-icons-outlined">article</mat-icon>
+            <mat-icon class="material-icons-outlined">{{menuItem.icon}}</mat-icon>
           </span>
           <span>{{ menuItem.title | translate }}</span>
         </a>
@@ -23,6 +23,15 @@
 
 
       <div class="navbar-end">
+        <div class="navbar-item">
+
+          <a class="button is-primary" *ngIf="!isLoggedIn" [routerLink]="'/login'">
+            {{'system.action.login' | translate}}
+          </a>
+          <button class="button is-light" *ngIf="isLoggedIn" (click)="logout()">
+            {{'system.action.logout' | translate}}
+          </button>
+        </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             {{language.title | translate}}

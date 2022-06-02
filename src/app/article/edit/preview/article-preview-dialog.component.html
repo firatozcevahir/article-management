@@ -7,6 +7,5 @@
     <div class="column is-full pb-0">
       <mat-divider></mat-divider>
     </div>
-    <div class="column is-full p-6 has-text-justified">
-      {{content}}
+    <div class="column is-full p-6 has-text-justified" [innerHtml]="content | sanitizeHtml">
     </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DEFAULT_EDITOR_CONFIG } from '@app/_core/constants/base-constants';
 import { DialogService } from '@app/_core/services/dialog.service';
 import * as moment from 'moment';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -17,13 +18,17 @@ export class ArticleEditComponent implements OnInit {
 
   id: string;
   article: ArticleDto;
+
   isEdit = false;
   isLoading = false;
+
+  editorConfig = DEFAULT_EDITOR_CONFIG;
 
   form = this.formBuilder.group({
     id: [null],
     title: [null, Validators.required],
     author: [null, Validators.required],
+    summary: [null, Validators.required],
     content: [null, Validators.required],
     publishDate: [null, Validators.required]
   });
@@ -93,6 +98,7 @@ export class ArticleEditComponent implements OnInit {
       id: formData.id,
       title: formData.title,
       author: formData.author,
+      summary: formData.summary,
       publishDate: formData.publishDate,
       content: formData.content
     };

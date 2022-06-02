@@ -17,7 +17,7 @@
           <th class="has-text-centered">#</th>
           <th>{{ 'article.field.title' | translate }}</th>
           <th>{{ 'article.field.author' | translate }}</th>
-          <th>{{ 'article.field.excerpt' | translate }}</th>
+          <th>{{ 'article.field.summary' | translate }}</th>
           <th>{{ 'article.field.publishDate' | translate }}</th>
           <th>{{ 'article.field.createdOn' | translate }}</th>
           <th class="has-text-centered">{{ 'article.field.actions' | translate }}</th>
@@ -29,7 +29,7 @@
           <td><a [routerLink]="'/article/view/' + article.id" class="has-text-primary is-italic"
               [matTooltip]="article.title.length >= 30 ? article.title : null">{{article.title| truncate:30}}</a></td>
           <td>{{article.author }}</td>
-          <td>{{article.content | truncate}}</td>
+          <td>{{article.summary | truncate}}</td>
           <td>{{article.publishDate | localizedDate}}</td>
           <td>{{article.createdOn | localizedDate}}</td>
           <td class="has-text-centered">

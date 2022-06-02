@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '@app/_core/guards/auth.guard';
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     loadChildren: () => import('@app/home/home.module').then(m => m.HomeModule),
   },
   {
@@ -15,12 +16,18 @@ const routes: Routes = [
   },
   {
     path: 'article/new',
-    loadChildren: () => import('@app/article/edit/article-edit.module').then(m => m.ArticleEditModule)
+    loadChildren: () => import('@app/article/edit/article-edit.module').then(m => m.ArticleEditModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'article/edit/:id',
     loadChildren: () => import('@app/article/edit/article-edit.module').then(m => m.ArticleEditModule),
-    // TODO: HANDLE canActivate logic
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ];
 

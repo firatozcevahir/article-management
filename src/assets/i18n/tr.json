@@ -13,13 +13,24 @@
     },
     "action": {
       "login": "Giriş Yap",
+      "logout": "Çıkış Yap",
       "yes": "Evet",
       "no": "Hayır",
       "confirm": "Onayla",
       "cancel": "İptal",
       "save": "Kaydet",
       "saveAndClose": "Kaydet ve Kapat"
+    },
+    "error": {
+      "userNotFound": "Kullanıcı Bulunamadı"
+    },
+    "success": {
+      "insert": "Kayıt Başarılı",
+      "edit": "Güncelleme Başarılı"
     }
+  },
+  "home": {
+    "title": "Anasayfa"
   },
   "article": {
     "title": "Makaleler",
@@ -32,12 +43,21 @@
     "field": {
       "title": "Başlık",
       "author": "Yayıncı",
-      "excerpt": "Alıntı",
+      "summary": "Özet",
       "publishDate": "Yayınlama Tarihi",
       "createdOn": "Oluşturma Tarihi",
       "actions": "İşlemler",
       "totalCount": "Toplam Makale",
       "content": "İçerik"
+    }
+  },
+  "login": {
+    "title": "Giriş Yap",
+    "field": {
+      "username": "Kullanıcı Adı",
+      "password": "Parola",
+      "usernamePlaceholder":"örn: firot",
+      "passwordPlaceholder": "**********"
     }
   }
 }

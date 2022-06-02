@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocalizedDatePipe } from './pipes/localized-date.pipe';
@@ -13,10 +13,13 @@ import { ConfirmationDialogModule } from './components/dialogs/confirmation-dial
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDividerModule } from '@angular/material/divider';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { SanitizeHtmlPipe } from './pipes/sanitize-html.pipe';
 @NgModule({
   declarations: [
     LocalizedDatePipe,
-    TruncatePipe
+    TruncatePipe,
+    SanitizeHtmlPipe
   ],
   exports: [
     // Common Modules
@@ -25,6 +28,7 @@ import { MatDividerModule } from '@angular/material/divider';
     ReactiveFormsModule,
     TranslateModule,
     NgxSpinnerModule,
+    AngularEditorModule,
 
     // Material Modules
     MatDialogModule,
@@ -39,7 +43,8 @@ import { MatDividerModule } from '@angular/material/divider';
 
     // Custom Pipes
     LocalizedDatePipe,
-    TruncatePipe
+    TruncatePipe,
+    SanitizeHtmlPipe
   ]
 })
 export class SharedModule { }

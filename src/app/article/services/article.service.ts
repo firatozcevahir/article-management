@@ -40,6 +40,7 @@ export class ArticleService {
       title: articleDto.title,
       publishDate: new Date(articleDto.publishDate),
       author: articleDto.author,
+      summary: articleDto.summary,
       content: articleDto.content,
       createdOn: new Date(),
       isActive: true
@@ -59,6 +60,7 @@ export class ArticleService {
 
     foundItem.title = articleDto.title;
     foundItem.author = articleDto.author;
+    foundItem.summary = articleDto.summary;
     foundItem.content = articleDto.content;
     foundItem.publishDate = new Date(articleDto.publishDate);
     localStorage.setItem('articles', JSON.stringify(dataList));

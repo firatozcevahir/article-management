@@ -13,13 +13,24 @@
     },
     "action": {
       "login": "Login",
+      "logout": "Logout",
       "yes": "Yes",
       "no": "No",
       "confirm": "Confirm",
       "cancel": "Cancel",
       "save": "Save",
       "saveAndClose": "Save and Close"
+    },
+    "error": {
+      "userNotFound": "User not Found"
+    },
+    "success": {
+      "insert": "Insert Successful",
+      "edit": "Edit Successful"
     }
+  },
+  "home": {
+    "title": "Home"
   },
   "article": {
     "title": "Articles",
@@ -32,12 +43,21 @@
     "field": {
       "title": "Title",
       "author": "Author",
-      "excerpt": "Excerpt",
+      "summary": "Summary",
       "publishDate": "Publish Date",
       "createdOn": "Created On",
       "actions": "Actions",
       "totalCount": "Total Articles",
       "content": "Content"
+    }
+  },
+  "login": {
+    "title": "Login",
+    "field": {
+      "username": "Username",
+      "password": "Password",
+      "usernamePlaceholder":"örn: firot",
+      "passwordPlaceholder": "**********"
     }
   }
 }

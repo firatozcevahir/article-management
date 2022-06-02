@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, LOCALE_ID, OnInit } from '@angular/core';
 import { HEADER_MENU_ITEMS, LANGUAGES } from '@app/_core/constants/base-constants';
-import { IdTitlePair } from '@app/_core/constants/models/base-models';
+import { IdTitlePair } from '@app/_core/models/base-models';
+import { AuthService } from '@app/_core/services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -17,14 +18,26 @@ export class HeaderComponent {
   languages = LANGUAGES;
   language: IdTitlePair;
 
+  isLoggedIn = false;
+  userInfo: string;
+
   constructor(
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private authService: AuthService
   ) {
     this.language = this.languages.find(i => i.id === this.translateService.currentLang);
+    this.isLoggedIn = this.authService.isLoggedIn();
+    this.userInfo = this.authService.getUserInfo();
   }
 
   setLanguage(language: IdTitlePair): void {
     this.translateService.use(language.id);
     this.language = language;
+  }
+
+
+  logout(): void {
+    this.authService.logOut();
+    this.isLoggedIn = false;
   }
 }
