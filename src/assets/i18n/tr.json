@@ -7,9 +7,11 @@
       "english": "İngilizce",
       "turkish": "Türkçe"
     },
-    "text": {
+    "confirmation": {
       "confirmDelete": "Silmeyi Onayla",
-      "areYouSure": "Öğeyi silmek istediğinize emin misiniz?"
+      "sureToDelete": "Öğeyi silmek istediğinize emin misiniz?",
+      "confirmLogout": "Çıkış Yapmayı Onayla",
+      "sureToLogout": "Çıkmak istediğinize emin misiniz?"
     },
     "action": {
       "login": "Giriş Yap",
@@ -40,6 +42,7 @@
     "readMore": "Devamını Oku",
     "checkOutOtherArticles": "Diğer makalelere göz atın",
     "preview": "Önizleme",
+    "search": "Başlık, yayıncı veya özet içinde arayın",
     "field": {
       "title": "Başlık",
       "author": "Yayıncı",
@@ -56,7 +59,7 @@
     "field": {
       "username": "Kullanıcı Adı",
       "password": "Parola",
-      "usernamePlaceholder":"örn: firot",
+      "usernamePlaceholder": "örn. firot",
       "passwordPlaceholder": "**********"
     }
   }

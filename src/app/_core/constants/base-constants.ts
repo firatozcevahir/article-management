@@ -59,7 +59,6 @@ export const DEFAULT_EDITOR_CONFIG: AngularEditorConfig = {
   sanitize: false,
   toolbarHiddenButtons: [
     [
-      'insertImage',
       'insertVideo',
       'heading'
     ]

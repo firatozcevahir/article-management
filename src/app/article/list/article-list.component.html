@@ -1,13 +1,16 @@
 <div class="column is-flex is-justify-content-space-between">
-  <div>
+  <div class="column is-align-items-center is-flex">
     <button mat-icon-button class="has-text-primary" (click)="loadData()">
       <mat-icon>refresh</mat-icon>
     </button>
     <span class="title is-6 has-text-grey">{{'article.title' | translate }}</span>
   </div>
-  <a mat-icon-button class="button is-primary" [routerLink]="'/article/new'">
-    <mat-icon>add</mat-icon>
-  </a>
+  <div class="column is-align-items-center is-flex">
+    <input class="input is-primary mr-5" type="text" [placeholder]="'article.search' | translate" [(ngModel)]="searchTerm" (input)="onSearchTermChange()">
+    <a mat-icon-button class="button is-primary" [routerLink]="'/article/new'" [matTooltip]="'article.new' | translate">
+      <mat-icon>add</mat-icon>
+    </a>
+  </div>
 </div>
 <div class="column is-justify-content-center">
   <div class="table-container">
@@ -24,7 +27,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let article of articles;let i = index">
+        <tr *ngFor="let article of filteredArticles;let i = index">
           <td class="has-text-centered">{{i+1}}</td>
           <td><a [routerLink]="'/article/view/' + article.id" class="has-text-primary is-italic"
               [matTooltip]="article.title.length >= 30 ? article.title : null">{{article.title| truncate:30}}</a></td>

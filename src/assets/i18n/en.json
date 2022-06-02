@@ -7,9 +7,11 @@
       "english": "English",
       "turkish": "Turkish"
     },
-    "text": {
+    "confirmation": {
       "confirmDelete": "Confirm Delete",
-      "areYouSure": "Are you sure to delete the item?"
+      "sureToDelete": "Are you sure to delete the item?",
+      "confirmLogout": "Confirm Logout",
+      "sureToLogout": "Are you sure to logout?"
     },
     "action": {
       "login": "Login",
@@ -40,6 +42,7 @@
     "readMore": "Read More",
     "checkOutOtherArticles": "Check Out Other Articles",
     "preview": "Preview",
+    "search": "Search in title, author, summary",
     "field": {
       "title": "Title",
       "author": "Author",
@@ -56,7 +59,7 @@
     "field": {
       "username": "Username",
       "password": "Password",
-      "usernamePlaceholder":"örn: firot",
+      "usernamePlaceholder": "e.g. firot",
       "passwordPlaceholder": "**********"
     }
   }

@@ -13,8 +13,11 @@ import { ArticleService } from '../services/article.service';
 export class ArticleListComponent {
 
   articles: ArticleDto[] = [];
+  filteredArticles: ArticleDto[] = [];
 
   isLoading = false;
+
+  searchTerm: string;
 
   constructor(
     private articleService: ArticleService,
@@ -22,6 +25,14 @@ export class ArticleListComponent {
     private dialogService: DialogService
   ) {
     this.loadData();
+  }
+
+  onSearchTermChange() {
+    this.filteredArticles = this.articles
+      .filter(
+        i => i.author.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+          i.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+          i.summary.toLowerCase().includes(this.searchTerm.toLowerCase()));
   }
 
 
@@ -32,15 +43,17 @@ export class ArticleListComponent {
       .pipe(finalize(() => {
         this.isLoading = false;
         this.spinner.hide();
+        this.searchTerm = null;
       }))
       .subscribe((data) => {
         this.articles = data;
+        this.filteredArticles = data;
       });
   }
 
 
   deleteArticle(article: ArticleDto): void {
-    this.dialogService.openConfirmation('system.text.confirmDelete', 'system.text.areYouSure')
+    this.dialogService.openConfirmation('system.confirmation.confirmDelete', 'system.confirmation.sureToDelete')
       .afterClosed()
       .subscribe((res) => {
 

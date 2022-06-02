@@ -2,6 +2,7 @@ import { AfterViewInit, Component, LOCALE_ID, OnInit } from '@angular/core';
 import { HEADER_MENU_ITEMS, LANGUAGES } from '@app/_core/constants/base-constants';
 import { IdTitlePair } from '@app/_core/models/base-models';
 import { AuthService } from '@app/_core/services/auth.service';
+import { DialogService } from '@app/_core/services/dialog.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -23,7 +24,8 @@ export class HeaderComponent {
 
   constructor(
     private translateService: TranslateService,
-    private authService: AuthService
+    private authService: AuthService,
+    private dialogService: DialogService
   ) {
     this.language = this.languages.find(i => i.id === this.translateService.currentLang);
     this.isLoggedIn = this.authService.isLoggedIn();
@@ -37,7 +39,15 @@ export class HeaderComponent {
 
 
   logout(): void {
-    this.authService.logOut();
-    this.isLoggedIn = false;
+    this.dialogService.openConfirmation('system.confirmation.confirmLogout', 'system.confirmation.sureToLogout')
+      .afterClosed()
+      .subscribe((res) => {
+        if (!res) {
+          return;
+        }
+
+        this.authService.logOut();
+        this.isLoggedIn = false;
+      });
   }
 }
