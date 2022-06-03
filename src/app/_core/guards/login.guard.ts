@@ -16,7 +16,7 @@ export class LoginGuard implements CanActivate {
 
   canActivate(): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
 
-    const isLoggedIn = this.authService.isLoggedIn();
+    const isLoggedIn = this.authService.isLoggedIn;
     if (!isLoggedIn) {
       localStorage.removeItem('userInfo');
       return true;

@@ -37,6 +37,7 @@
   "article": {
     "title": "Makaleler",
     "new": "Yeni Makale",
+    "edit":"Düzenle {{title}} ",
     "notFound": "Makale Bulunamadı",
     "addNewArticle": "Yeni Makale Ekle",
     "readMore": "Devamını Oku",

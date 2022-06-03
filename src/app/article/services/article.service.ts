@@ -14,21 +14,25 @@ export class ArticleService {
     return 'Service WORKS';
   }
 
+  private getArticleListFromStorage(): ArticleDto[] {
+    return (JSON.parse(localStorage.getItem('articles')) || []) as ArticleDto[];
+  }
+
 
   getArticles(): Observable<ArticleDto[]> {
-    const dataList = (JSON.parse(localStorage.getItem('articles')) || []) as ArticleDto[];
+    const dataList = this.getArticleListFromStorage();
     return of(dataList).pipe(delay(1500));
   }
 
   getArticleDetailById(id: string): Observable<ArticleDto> {
-    const dataList = (JSON.parse(localStorage.getItem('articles')) || []) as ArticleDto[];
+    const dataList = this.getArticleListFromStorage();
     const foundItem = dataList.find(i => i.id === id);
     return of(foundItem).pipe(delay(1000));
   }
 
   getRandomArticles(idNotToInclude: string, count: number): Observable<ArticleDto[]> {
 
-    const dataList = (JSON.parse(localStorage.getItem('articles')) || []) as ArticleDto[];
+    const dataList = this.getArticleListFromStorage();
     const shuffled = dataList.filter(i => i.id !== idNotToInclude).sort(() => 0.5 - Math.random());
     const foundArticles = shuffled.slice(0, count);
     return of(foundArticles);
@@ -45,14 +49,14 @@ export class ArticleService {
       createdOn: new Date(),
       isActive: true
     };
-    const dataList = (JSON.parse(localStorage.getItem('articles')) || []) as ArticleDto[];
+    const dataList = this.getArticleListFromStorage();
     dataList.push(article);
     localStorage.setItem('articles', JSON.stringify(dataList));
     return of(article.id).pipe(delay(1000));
   }
 
   updateArticle(articleDto: ArticleDto): Observable<string> {
-    const dataList = (JSON.parse(localStorage.getItem('articles')) || []) as ArticleDto[];
+    const dataList = this.getArticleListFromStorage();
     const foundItem = dataList.find(i => i.id === articleDto.id);
     if (!foundItem) {
       return of(null);
@@ -69,7 +73,7 @@ export class ArticleService {
   }
 
   deleteArticle(id: string): Observable<string> {
-    const dataList = (JSON.parse(localStorage.getItem('articles')) || []) as ArticleDto[];
+    const dataList = this.getArticleListFromStorage();
     const foundIndex = dataList.findIndex(i => i.id === id);
     dataList.splice(foundIndex, 1);
     localStorage.setItem('articles', JSON.stringify(dataList));

@@ -37,6 +37,7 @@
   "article": {
     "title": "Articles",
     "new": "New Article",
+    "edit":"Editing {{title}} ",
     "notFound": "Not Articles Found",
     "addNewArticle": "Add a New Article",
     "readMore": "Read More",

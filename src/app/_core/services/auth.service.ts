@@ -13,7 +13,7 @@ export class AuthService {
   constructor(private router: Router) {
   }
 
-  isLoggedIn(): boolean {
+  get isLoggedIn(): boolean {
     return localStorage.getItem('userInfo') !== null;
   }
 

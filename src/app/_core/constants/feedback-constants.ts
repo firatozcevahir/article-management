@@ -5,5 +5,5 @@ export const GLOBAL_ERROR = {
 
 export const GLOBAL_SUCCESS = {
   insert: 'system.success.insert',
-  editS: 'system.success.edit',
+  edit: 'system.success.edit',
 }

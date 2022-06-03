@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@app/_core/services/auth.service';
 import { DialogService } from '@app/_core/services/dialog.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { finalize } from 'rxjs';
@@ -19,12 +20,16 @@ export class ArticleListComponent {
 
   searchTerm: string;
 
+  isLoggedIn = false;
+
   constructor(
     private articleService: ArticleService,
     private spinner: NgxSpinnerService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private authService: AuthService
   ) {
     this.loadData();
+    this.isLoggedIn = this.authService.isLoggedIn;
   }
 
   onSearchTermChange() {

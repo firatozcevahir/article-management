@@ -1,6 +1,6 @@
 <div class="p-6">
   <div class="column is-flex is-justify-content-space-between mb-4 p-0">
-    <span class="title is-6 has-text-grey">{{'article.new' | translate }} </span>
+    <span class="title is-6 has-text-grey">{{isEdit ? ('article.edit' | translate:{title:article?.title || ''}) : ('article.new' | translate) }}</span>
     <button type="button" class="button is-primary" (click)="showPreview()" [disabled]="form.invalid"
       [matTooltip]="'article.preview' | translate">
       <mat-icon class="material-icons-outlined">visibility</mat-icon>

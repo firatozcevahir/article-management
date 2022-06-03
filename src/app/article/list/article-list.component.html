@@ -39,7 +39,7 @@
             <a mat-icon-button class="has-text-info" [routerLink]="'/article/edit/' + article.id">
               <mat-icon class="material-icons-outlined">edit</mat-icon>
             </a>
-            <button mat-icon-button type="button" class="has-text-danger" (click)="deleteArticle(article)">
+            <button mat-icon-button type="button" class="has-text-danger" (click)="deleteArticle(article)" *ngIf="isLoggedIn">
               <mat-icon class="material-icons-outlined">delete</mat-icon>
             </button>
           </td>

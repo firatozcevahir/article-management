@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DEFAULT_EDITOR_CONFIG } from '@app/_core/constants/base-constants';
+import { GLOBAL_SUCCESS } from '@app/_core/constants/feedback-constants';
 import { DialogService } from '@app/_core/services/dialog.service';
+import { NotificationService } from '@app/_core/services/notification.service';
 import * as moment from 'moment';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { finalize, Observable } from 'rxjs';
@@ -43,7 +45,8 @@ export class ArticleEditComponent implements OnInit {
     private formBuilder: FormBuilder,
     private articleService: ArticleService,
     private spinner: NgxSpinnerService,
-    private dialog: DialogService
+    private dialog: DialogService,
+    private notificationService: NotificationService
   ) {
     this.id = this.activatedRoute.snapshot.params.id;
     this.isEdit = this.id ? true : false;
@@ -115,7 +118,7 @@ export class ArticleEditComponent implements OnInit {
       this.isLoading = false;
     }))
     .subscribe((data) => {
-      console.log(data);
+      this.notificationService.showSuccess(this.isEdit ? GLOBAL_SUCCESS.edit : GLOBAL_SUCCESS.insert);
       if (shouldClose) {
         this.router.navigateByUrl('/articles');
         return;

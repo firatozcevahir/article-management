@@ -28,7 +28,7 @@ export class HeaderComponent {
     private dialogService: DialogService
   ) {
     this.language = this.languages.find(i => i.id === this.translateService.currentLang);
-    this.isLoggedIn = this.authService.isLoggedIn();
+    this.isLoggedIn = this.authService.isLoggedIn;
     this.userInfo = this.authService.getUserInfo();
   }
 
