@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="p-6 content">
+  <h2>
+    {{'home.content.title' | translate}}
+  </h2>
+  <ul>
+    <li>{{'home.content.item1' | translate}}</li>
+    <li>{{'home.content.item2' | translate}}</li>
+    <li>{{'home.content.item3' | translate}}</li>
+    <li>{{'home.content.item4' | translate}}</li>
+    <li>{{'home.content.item5' | translate}}</li>
+    <li>{{'home.content.item6' | translate}}</li>
+  </ul>
+
+  <ol>
+    <li class="is-block"><a [routerLink]="'/articles'" class="has-text-primary">{{'home.seeArticles' | translate}}</a></li>
+  </ol>
+</div>

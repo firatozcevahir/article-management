@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   dev: true,
   test: false,
-  defaultLanguage: 'tr',
+  defaultLanguage: 'en',
 };
 
 /*

@@ -32,12 +32,22 @@
     }
   },
   "home": {
-    "title": "Anasayfa"
+    "title": "Anasayfa",
+    "seeArticles": "Makaleleri görmek için tıklayın",
+    "content": {
+      "title": "Makale Yönetimi",
+      "item1": "Uygulamada çoklu dil desteği vardır (tr, en mevcut)",
+      "item2": "Yeni makale yaratabilirsiniz. Makaleleri listeleyebilir, düzenleyebilir, silebilirsiniz",
+      "item3": "Makale ekleme, silme, güncelleme işlemleri yetkiyle korunmaktadır",
+      "item4": "Mevcutta bir kullanıcı var (kullanıcı adı: firot, parola: 123). Daha fazlası src/app/_core/services/auth.service.ts dosyasına eklenebilir",
+      "item5": "Makale listesi arama kutusu kullanarak filtrelenebilir (Başlık, yayıncı, özet alanlarında arama yapıyor)",
+      "item6": "Makaleler localeStorage'da tutuluyor"
+    }
   },
   "article": {
     "title": "Makaleler",
     "new": "Yeni Makale",
-    "edit":"Düzenle {{title}} ",
+    "edit": "Düzenle {{title}} ",
     "notFound": "Makale Bulunamadı",
     "addNewArticle": "Yeni Makale Ekle",
     "readMore": "Devamını Oku",

@@ -32,7 +32,17 @@
     }
   },
   "home": {
-    "title": "Home"
+    "title": "Home",
+    "seeArticles": "Click to see articles",
+    "content": {
+      "title": "Article Management",
+      "item1": "This application supports multi language (tr, en currently)",
+      "item2": "You can list, insert, edit, delete articles",
+      "item3": "Article insert, edit and delete operations are authentication protected",
+      "item4": "There is one user currently (username: firot, password: 123). Can be added more in src/app/_core/services/auth.service.ts",
+      "item5": "Article list can be filtered using search input on top of the list (searching in title, author, summary fields)",
+      "item6": "Articles are stored in localStorage"
+    }
   },
   "article": {
     "title": "Articles",
