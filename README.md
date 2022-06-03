@@ -13,5 +13,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## How to Run the Project
 - Download the project or clone the repository from github
-- Run `npm insall` to install packages
+- Run `npm install` to install packages
 - Run `ng serve` then navigate to `http://localhost:4200/` or simply `npm run start`
